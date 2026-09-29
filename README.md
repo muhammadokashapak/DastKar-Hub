@@ -8,7 +8,7 @@
   <i>Eliminating exploitative intermediaries • Built-in Bayesian Discovery Engine • Zero-friction Craft Commerce</i>
 </p>
 
-[![Release](https://img.shields.io/badge/Release-v1.0.0--Production-0ea5e9?style=for-the-badge&logo=github&logoColor=white)](https://github.com/okashaxortlogix/DastKar-Hub)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--Production-0ea5e9?style=for-the-badge&logo=github&logoColor=white)](https://github.com/muhammadokashapak/DastKar-Hub)
 [![Backend Tests](https://img.shields.io/badge/PHPUnit-24%20Passed%20(298%20Assertions)-10b981?style=for-the-badge&logo=php&logoColor=white)](services/api/tests)
 [![Vite Build](https://img.shields.io/badge/Frontend-Vite%208%20%7C%20React%2019-6366f1?style=for-the-badge&logo=react&logoColor=white)](apps/web)
 [![Tailwind](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)](apps/web)
@@ -277,7 +277,7 @@ Make sure you have the following installed on your development machine:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/okashaxortlogix/DastKar-Hub.git
+git clone https://github.com/muhammadokashapak/DastKar-Hub.git
 cd DastKar-Hub
 ```
 
@@ -431,7 +431,7 @@ This project is open-source software licensed under the **[MIT License](LICENSE)
 
 Dedicated to the hardworking artisans, potters, weavers, carvers, and jewelers of Pakistan whose heritage and timeless dedication keep our culture alive.
 
-Developed with ❤️ by **Muhammad Okasha** ([@okashaxortlogix](https://github.com/okashaxortlogix))
+Developed with ❤️ by **Muhammad Okasha** ([@muhammadokashapak](https://github.com/muhammadokashapak))
 
 ---
 
