@@ -26,6 +26,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { ArtisanEthicsCharterPage } from './pages/ArtisanEthicsCharterPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ScrollToTop } from './components/common/ScrollToTop';
+import { ArtisanChatWidget } from './components/common/ArtisanChatWidget';
 
 export function App() {
   return (
@@ -61,6 +62,7 @@ export function App() {
                   </Routes>
                 </main>
                 <Footer />
+                <ArtisanChatWidget />
                 <MobileBottomNav />
               </div>
             </BrowserRouter>

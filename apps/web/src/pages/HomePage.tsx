@@ -8,9 +8,6 @@ import {
   QrCode,
   Truck,
   Sparkles,
-  MessageCircle,
-  X,
-  Send,
   MapPin,
   HeartHandshake,
   CheckCircle2
@@ -87,16 +84,6 @@ export const HomePage: React.FC = () => {
   const [activeCategoryTab, setActiveCategoryTab] = useState<string>('pottery-ceramics');
   const [categoryProducts, setCategoryProducts] = useState<Product[]>([]);
   const [loadingCategoryProducts, setLoadingCategoryProducts] = useState(false);
-
-  // Floating Chat / Message Drawer State
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [chatMessage, setChatMessage] = useState('');
-  const [messagesList, setMessagesList] = useState([
-    {
-      sender: 'bot',
-      text: 'Salam! Welcome to DastKar Hub. Sourcing directly from Pakistani master artisans. How may we assist your craft discovery today?',
-    },
-  ]);
 
   // Mobile Bazaar & QR Scanner Modal State
   const [isMobileBazaarModalOpen, setIsMobileBazaarModalOpen] = useState(false);
@@ -175,25 +162,6 @@ export const HomePage: React.FC = () => {
         setLoadingCategoryProducts(false);
       });
   }, [activeCategoryTab]);
-
-  const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!chatMessage.trim()) return;
-
-    const userText = chatMessage.trim();
-    setMessagesList((prev) => [...prev, { sender: 'user', text: userText }]);
-    setChatMessage('');
-
-    setTimeout(() => {
-      setMessagesList((prev) => [
-        ...prev,
-        {
-          sender: 'bot',
-          text: `Thank you for your message! Our artisan workshop liaison will connect with you regarding: "${userText}". All custom requests are handled directly by master makers.`,
-        },
-      ]);
-    }, 700);
-  };
 
   const displayCategories =
     categories.length > 0
@@ -824,84 +792,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 9. Floating Messages / Artisan Support Liaison */}
-      <div className={`fixed bottom-18 md:bottom-6 right-3 sm:right-6 ${isChatOpen ? 'z-50' : 'z-30'}`}>
-        {!isChatOpen ? (
-          <button
-            type="button"
-            onClick={() => setIsChatOpen(true)}
-            aria-label="Open artisan chat"
-            className="flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-white text-[#20242B] rounded-full border border-[#EAE4D8] hover:border-[#B94D28] hover:text-[#B94D28] shadow-lg transition-all hover:scale-105 cursor-pointer text-xs font-semibold"
-          >
-            <MessageCircle className="w-4 h-4 text-[#B94D28]" />
-            <span className="hidden xs:inline">Artisan Chat</span>
-            <span className="w-2 h-2 rounded-full bg-[#54745C] animate-pulse" />
-          </button>
-        ) : (
-          <div className="w-[calc(100vw-2rem)] max-w-sm bg-white rounded-2xl shadow-2xl border border-[#EAE4D8] overflow-hidden flex flex-col h-96 animate-in slide-in-from-bottom-5 duration-200">
-            {/* Chat Header */}
-            <div className="p-3.5 sm:p-4 bg-[#B94D28] text-white flex items-center justify-between">
-              <div className="flex items-center space-x-2.5">
-                <div className="w-8 h-8 rounded-full bg-white text-[#B94D28] font-bold flex items-center justify-center text-xs">
-                  D
-                </div>
-                <div>
-                  <h3 className="font-serif font-bold text-xs">Artisan Workshop Support</h3>
-                  <p className="text-[10px] text-amber-100">Direct Craft Liaison</p>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsChatOpen(false)}
-                className="p-1 rounded-lg hover:bg-white/20 transition-colors text-white cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
 
-            {/* Chat Body */}
-            <div className="flex-1 p-3.5 overflow-y-auto space-y-3 text-xs bg-[#F8F5EF]">
-              {messagesList.map((m, idx) => (
-                <div
-                  key={idx}
-                  className={`flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-                >
-                  <div
-                    className={`max-w-[80%] p-3 rounded-2xl ${
-                      m.sender === 'user'
-                        ? 'bg-[#B94D28] text-white rounded-br-none'
-                        : 'bg-white text-[#20242B] border border-[#EAE4D8] rounded-bl-none shadow-2xs'
-                    }`}
-                  >
-                    {m.text}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Chat Input */}
-            <form
-              onSubmit={handleSendMessage}
-              className="p-3 border-t border-[#EAE4D8] bg-white flex items-center space-x-2"
-            >
-              <input
-                type="text"
-                value={chatMessage}
-                onChange={(e) => setChatMessage(e.target.value)}
-                placeholder="Ask about craft, materials, dimensions..."
-                className="flex-1 px-3 py-2 bg-[#F8F5EF] border border-[#EAE4D8] rounded-xl text-xs focus:outline-hidden focus:border-[#B94D28]"
-              />
-              <button
-                type="submit"
-                className="p-2 bg-[#B94D28] hover:bg-[#9C3D1D] text-white rounded-xl transition-colors cursor-pointer"
-                aria-label="Send message"
-              >
-                <Send className="w-3.5 h-3.5" />
-              </button>
-            </form>
-          </div>
-        )}
-      </div>
 
       {/* Real Mobile Bazaar & Authenticity QR Scanner Modal */}
       <MobileBazaarModal
