@@ -375,4 +375,41 @@ class AdvancedMarketplaceTest extends TestCase
 
         $unauthorizedDisputeResolve->assertStatus(403);
     }
+
+    public function test_ai_listing_assistant_synthesizes_authentic_craft_listing(): void
+    {
+        $response = $this->actingAs($this->sellerUser, 'sanctum')
+            ->postJson('/api/v1/seller/ai/generate-listing', [
+                'notes' => 'Multani blue pottery vase cobalt oxide glaze indus riverbed clay',
+            ]);
+
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    'title',
+                    'description',
+                    'materials',
+                    'dimensions',
+                    'care_instructions',
+                    'suggested_price',
+                    'tags',
+                    'social_caption',
+                    'ai_provider',
+                ],
+                'message',
+            ]);
+
+        $data = $response->json('data');
+        $this->assertNotEmpty($data['title']);
+        $this->assertNotEmpty($data['description']);
+        $this->assertGreaterThan(0, $data['suggested_price']);
+
+        // Unauthorized buyer cannot generate AI seller listing
+        $buyerResponse = $this->actingAs($this->buyer, 'sanctum')
+            ->postJson('/api/v1/seller/ai/generate-listing', [
+                'notes' => 'Multani blue pottery vase',
+            ]);
+
+        $buyerResponse->assertStatus(403);
+    }
 }

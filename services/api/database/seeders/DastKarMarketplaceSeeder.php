@@ -1006,58 +1006,66 @@ class DastKarMarketplaceSeeder extends Seeder
             }
 
             $craftImages = [
-                'hunar-e-resin' => [
+                'hunar-e-resin-custom' => [
                     'cover' => 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'peshawar-leather-lab' => [
                     'cover' => 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
-                'mitti-clay-contemporary-pottery' => [
+                'mitti-clay-contemporary' => [
                     'cover' => 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'rang-e-hunar-studio' => [
                     'cover' => 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'swat-handloom-wool-weaves' => [
                     'cover' => 'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
-                'dastkari-studio-balochi-crafts' => [
-                    'cover' => 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80',
+                'dastkari-studio-balochi' => [
+                    'cover' => 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
+                ],
+                'hunar-e-wood-chiniot' => [
+                    'cover' => 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
+                ],
+                'khushboo-crafts-candle' => [
+                    'cover' => 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'mitti-studio-ceramic-decor' => [
                     'cover' => 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'hala-artisan-clay-potters' => [
                     'cover' => 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'woven-dreams-macrame' => [
                     'cover' => 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'peshawar-craft-house-brass' => [
                     'cover' => 'https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'kashmir-threads-pashmina' => [
                     'cover' => 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
                 'lahore-handmade-studio' => [
                     'cover' => 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80',
-                    'avatar' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+                    'avatar' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&crop=face&w=400&h=400&q=80',
                 ],
             ];
 
             $artisanCover = $craftImages[$tpl['slug']]['cover'] ?? 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80';
-            $artisanAvatar = $craftImages[$tpl['slug']]['avatar'] ?? 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80';
+            $artisanAvatar = $craftImages[$tpl['slug']]['avatar'] ?? 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&crop=face&w=400&h=400&q=80';
 
             $seller = SellerProfile::where('slug', $tpl['slug'])->first();
             if ($seller) {
@@ -1364,9 +1372,8 @@ class DastKarMarketplaceSeeder extends Seeder
                     $ratingCount = rand(0, 2);
                 }
 
-                $imagesList = $this->craftImagePool[$tpl['img']] ?? $this->craftImagePool['decor'];
-                $primaryImg = $imagesList[$i % count($imagesList)];
-                $secondaryImgs = array_filter($imagesList, fn ($url) => $url !== $primaryImg);
+                // Strict object-aware craft image resolution
+                [$primaryImg, $secondaryImgs] = $this->resolveCraftImagesForProduct($productTitle, $parentCat->slug, $i);
 
                 // Rich artisan description
                 $productDesc = "Handcrafted by artisans at {$assignedMaker->business_name} in {$assignedMaker->location_city}, {$assignedMaker->location_region}.\n\n"
@@ -1407,7 +1414,7 @@ class DastKarMarketplaceSeeder extends Seeder
                     ]
                 );
 
-                // Primary Image
+                // Primary Image - Always matched to product physical object
                 ProductImage::updateOrCreate(
                     ['product_id' => $product->id, 'is_primary' => true],
                     [
@@ -1417,17 +1424,26 @@ class DastKarMarketplaceSeeder extends Seeder
                     ]
                 );
 
+                // Clear any legacy broken images for this product
+                ProductImage::where('product_id', $product->id)
+                    ->where(function ($q) {
+                        $q->where('image_url', 'like', '%1590483256037%')
+                          ->orWhere('image_url', 'like', '%1611591475152%')
+                          ->orWhere('image_url', 'like', '%1576020799627%');
+                    })->delete();
+
                 // Additional gallery images (2-3 gallery images per product)
                 $sort = 2;
                 foreach (array_slice($secondaryImgs, 0, 2) as $secImg) {
-                    ProductImage::firstOrCreate(
-                        ['product_id' => $product->id, 'image_url' => $secImg],
+                    ProductImage::updateOrCreate(
+                        ['product_id' => $product->id, 'sort_order' => $sort],
                         [
+                            'image_url' => $secImg,
                             'alt_text' => $productTitle . ' detail view ' . $sort,
                             'is_primary' => false,
-                            'sort_order' => $sort++,
                         ]
                     );
+                    $sort++;
                 }
 
                 // Add Customization Options if customizable
@@ -1601,5 +1617,330 @@ class DastKarMarketplaceSeeder extends Seeder
                 ]
             );
         }
+    }
+
+    /**
+     * Resolves high-resolution, verified craft image URLs strictly matching the product's physical object.
+     */
+    private function resolveCraftImagesForProduct(string $title, string $categorySlug, int $seedIndex): array
+    {
+        $t = strtolower($title);
+
+        // 1. Ceramic & Tableware (Plate, Bowl, Vase, Mug/Cup, Pot/Handi, Teapot)
+        if (str_contains($t, 'plate') || str_contains($t, 'thali') || str_contains($t, 'platter')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'bowl') || str_contains($t, 'katori')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'vase') || str_contains($t, 'surahi')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'cup') || str_contains($t, 'mug') || str_contains($t, 'kullar') || str_contains($t, 'chai') || str_contains($t, 'shaker') || str_contains($t, 'dispenser')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'matka') || str_contains($t, 'handi') || str_contains($t, 'pot') || str_contains($t, 'clay') || str_contains($t, 'planter') || str_contains($t, 'soap dish')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'teapot') || str_contains($t, 'kettle')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        // 2. Leather & Footwear (Chappal, Khussa, Wallet, Belt, Bag, Key Fob)
+        if (str_contains($t, 'chappal') || str_contains($t, 'sandal') || str_contains($t, 'peshawari') || str_contains($t, 'zalmi')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'khussa') || str_contains($t, 'shoe') || str_contains($t, 'footwear') || str_contains($t, 'slip-on')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'wallet') || str_contains($t, 'card holder') || str_contains($t, 'money clip') || str_contains($t, 'passport')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'belt')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'bag') || str_contains($t, 'tote') || str_contains($t, 'satchel') || str_contains($t, 'duffle') || str_contains($t, 'sleeve') || str_contains($t, 'case') || str_contains($t, 'mousepad') || str_contains($t, 'flask') || str_contains($t, 'strap')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'key') || str_contains($t, 'fob')) {
+            return [
+                'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        // 3. Jewelry & Adornments (Earrings, Necklace/Choker, Ring, Bracelet/Cuff)
+        if (str_contains($t, 'earring') || str_contains($t, 'jhumka') || str_contains($t, 'chandbali') || str_contains($t, 'stud')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'necklace') || str_contains($t, 'choker') || str_contains($t, 'mala') || str_contains($t, 'pendant') || str_contains($t, 'hansli') || str_contains($t, 'matha patti') || str_contains($t, 'brooch') || str_contains($t, 'hair pin')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'ring')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'bracelet') || str_contains($t, 'cuff') || str_contains($t, 'karra') || str_contains($t, 'bangle') || str_contains($t, 'payal') || str_contains($t, 'anklet')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        // 4. Woodwork (Tray, Box, Table, Board, Mirror, Clock, Chess)
+        if (str_contains($t, 'tray')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'box') || str_contains($t, 'casket') || str_contains($t, 'rehal') || str_contains($t, 'stand') || str_contains($t, 'rack') || str_contains($t, 'shelf')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'table') || str_contains($t, 'stool')) {
+            return [
+                'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'board') || str_contains($t, 'belan') || str_contains($t, 'chakla') || str_contains($t, 'spatula')) {
+            return [
+                'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'mirror') || str_contains($t, 'jharoka')) {
+            return [
+                'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'clock')) {
+            return [
+                'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'chess')) {
+            return [
+                'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        // 5. Textiles & Apparel (Ajrak, Shawl/Dupatta, Kurta/Vest, Cushion, Rug)
+        if (str_contains($t, 'ajrak')) {
+            return [
+                'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'shawl') || str_contains($t, 'dupatta') || str_contains($t, 'chaddar') || str_contains($t, 'stole') || str_contains($t, 'pashmina')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'kurta') || str_contains($t, 'vest') || str_contains($t, 'suit') || str_contains($t, 'shirt') || str_contains($t, 'kaftan') || str_contains($t, 'topi')) {
+            $primaries = [
+                'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80',
+            ];
+            $p = $primaries[$seedIndex % count($primaries)];
+            return [$p, array_values(array_filter($primaries, fn($u) => $u !== $p))];
+        }
+
+        if (str_contains($t, 'cushion') || str_contains($t, 'pillow')) {
+            return [
+                'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'rug') || str_contains($t, 'carpet') || str_contains($t, 'chatai') || str_contains($t, 'floor')) {
+            return [
+                'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'fabric') || str_contains($t, 'khaddar') || str_contains($t, 'linen') || str_contains($t, 'silk')) {
+            return [
+                'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        // 6. Home Décor & Lighting (Lamp, Salt Lamp, Lantern, Candle, Brass, Painting)
+        if (str_contains($t, 'salt lamp')) {
+            return [
+                'https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'lamp')) {
+            return [
+                'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'lantern')) {
+            return [
+                'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'candle')) {
+            return [
+                'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'brass') || str_contains($t, 'incense') || str_contains($t, 'dhoop') || str_contains($t, 'burner') || str_contains($t, 'peacock')) {
+            return [
+                'https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        if (str_contains($t, 'painting') || str_contains($t, 'truck art') || str_contains($t, 'art') || str_contains($t, 'frame') || str_contains($t, 'calligraphy')) {
+            return [
+                'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80']
+            ];
+        }
+
+        // Generic fallback by category
+        return match ($categorySlug) {
+            'jewelry-accessories' => [
+                'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80']
+            ],
+            'clothing-textiles', 'embroidery', 'crochet-knitting', 'shawls-scarves' => [
+                'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80']
+            ],
+            'leather-crafts', 'bags-wallets' => [
+                'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80']
+            ],
+            'woodwork', 'home-kitchen-crafts' => [
+                'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=800&q=80']
+            ],
+            default => [
+                'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80',
+                ['https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80']
+            ],
+        };
     }
 }

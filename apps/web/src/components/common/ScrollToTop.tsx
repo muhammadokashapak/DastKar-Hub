@@ -101,21 +101,24 @@ export const ScrollToTop: React.FC = () => {
     scrollToPageTop(true);
   }, []);
 
+  const isHomePage = pathname === '/';
+
   return (
     <>
-      {/* Floating Back to Top Button (Positioned safely above MobileBottomNav on small screens) */}
+      {/* Floating Back to Top Button (Positioned safely above chat on home page, and above mobile bottom nav) */}
       <button
         type="button"
         onClick={handleBackToTop}
         aria-label="Scroll back to top"
         title="Scroll to top / اوپر جائیں"
-        className={`fixed z-40 right-3.5 sm:right-6 transition-all duration-300 ease-out cursor-pointer flex items-center justify-center rounded-full shadow-lg border border-amber-200/50 bg-gradient-to-tr from-[#A0441E] via-[#C25E34] to-[#D96B3E] text-white hover:scale-110 active:scale-95 hover:shadow-xl focus:outline-hidden focus:ring-2 focus:ring-amber-300 ${
+        className={`fixed z-40 right-4 sm:right-6 transition-all duration-300 ease-out cursor-pointer flex items-center justify-center rounded-full shadow-lg border border-[#EAE4D8] bg-[#B94D28] hover:bg-[#9C3D1D] text-white hover:scale-110 active:scale-95 hover:shadow-xl focus:outline-hidden focus:ring-2 focus:ring-[#B94D28]/30 ${
           showFloatingButton
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 translate-y-6 pointer-events-none'
         } ${
-          // On mobile, position above mobile bottom nav (bottom-20), on desktop bottom-6
-          'bottom-20 md:bottom-6 w-10 h-10 sm:w-11 sm:h-11'
+          isHomePage
+            ? 'bottom-34 md:bottom-20 w-10 h-10 sm:w-11 sm:h-11'
+            : 'bottom-20 md:bottom-6 w-10 h-10 sm:w-11 sm:h-11'
         }`}
       >
         <ChevronUp className="w-5 h-5 stroke-[2.5]" />

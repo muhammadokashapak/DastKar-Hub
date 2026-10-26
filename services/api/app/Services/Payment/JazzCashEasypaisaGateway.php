@@ -76,7 +76,8 @@ class JazzCashEasypaisaGateway implements PaymentGatewayInterface
 
         $calculatedHash = hash_hmac('sha256', "{$this->integritySalt}&{$amount}&{$orderNumber}&{$txnRef}&{$this->merchantId}", $this->integritySalt);
 
-        $isValid = empty($signature) || hash_equals($calculatedHash, $signature) || ($payload['test_mode'] ?? false);
+        $isTestMode = ($payload['test_mode'] ?? false) && app()->environment('local', 'testing');
+        $isValid = $isTestMode || (!empty($signature) && hash_equals($calculatedHash, $signature));
 
         return [
             'valid' => $isValid,

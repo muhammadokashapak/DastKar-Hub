@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   Star,
@@ -19,6 +19,7 @@ import { Product, ProductVariant } from '../types';
 import { useCart } from '../lib/cartContext';
 import { useWishlist } from '../lib/wishlistContext';
 import { ProductCard } from '../components/commerce/ProductCard';
+import { getProductImage, handleImageError } from '../lib/craftImages';
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -99,9 +100,19 @@ export const ProductDetailPage: React.FC = () => {
     navigate('/checkout');
   };
 
-  const allImages = product.images && product.images.length > 0
-    ? product.images.map(img => img.image_url)
-    : [product.primary_image?.image_url || 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80'];
+  const allImages = useMemo(() => {
+    const raw = product.images && product.images.length > 0
+      ? product.images.map(img => img.image_url)
+      : [product.primary_image?.image_url || getProductImage(product)];
+    const filtered = raw.filter(
+      (u): u is string =>
+        Boolean(u) &&
+        !u.includes('1590483256037') &&
+        !u.includes('1611591475152') &&
+        !u.includes('1576020799627')
+    );
+    return filtered.length > 0 ? filtered : [getProductImage(product)];
+  }, [product]);
 
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 pb-32 md:pb-10 space-y-6 sm:space-y-10">
@@ -130,6 +141,7 @@ export const ProductDetailPage: React.FC = () => {
             <img
               src={activeImage || allImages[0]}
               alt={product.title}
+              onError={(e) => handleImageError(e, product.title)}
               className="w-full h-full object-cover object-center"
             />
             {product.is_customizable && (
@@ -152,7 +164,12 @@ export const ProductDetailPage: React.FC = () => {
                     activeImage === img ? 'border-[#C25E34] shadow-xs' : 'border-transparent opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt={`${product.title} — view ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img
+                    src={img}
+                    alt={`${product.title} — view ${idx + 1}`}
+                    onError={(e) => handleImageError(e, product.title)}
+                    className="w-full h-full object-cover"
+                  />
                 </button>
               ))}
             </div>
@@ -608,8 +625,8 @@ export const ProductDetailPage: React.FC = () => {
         </div>
       )}
 
-      {/* Mobile Sticky Action Bar (Fixed above MobileBottomNav on small screens) */}
-      <div className="fixed bottom-16 left-0 right-0 z-30 md:hidden bg-white/95 backdrop-blur-md border-t border-[#EBE5DA] px-3.5 py-2.5 shadow-xl flex items-center justify-between gap-3">
+      {/* Mobile Sticky Action Bar (Fixed flush above MobileBottomNav on small screens) */}
+      <div className="fixed bottom-14 left-0 right-0 z-30 md:hidden bg-white/95 backdrop-blur-md border-t border-[#EBE5DA] px-3.5 py-2 shadow-xl flex items-center justify-between gap-3">
         <div className="min-w-0">
           <div className="text-[10px] text-gray-500 font-medium">Total Price</div>
           <div className="text-base font-bold text-[#C25E34] font-sans truncate">

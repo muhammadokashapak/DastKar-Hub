@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", "Noto Nastaliq Urdu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Playfair Display", "Noto Nastaliq Urdu", Georgia, Cambria, serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Lora", "Playfair Display", "Noto Nastaliq Urdu", Georgia, serif;
   --font-display: "Cinzel", "Playfair Display", Georgia, serif;
-  --color-terracotta: #C25E34;
-  --color-terracotta-dark: #A0441E;
-  --color-terracotta-light: #FBF0EB;
-  --color-emerald-craft: #065F46;
-  --color-warm-border: #EBE5DA;
-  --color-page-bg: #FAF8F5;
+  --color-terracotta: #B94D28;
+  --color-terracotta-dark: #9C3D1D;
+  --color-terracotta-light: #FAF0EA;
+  --color-ivory: #F8F5EF;
+  --color-charcoal: #20242B;
+  --color-brass: #D5A45D;
+  --color-sage: #54745C;
+  --color-warm-border: #EAE4D8;
+  --color-page-bg: #F8F5EF;
 }
 
 ::selection {
@@ -49,16 +52,18 @@
 
 @layer base {
   :root {
-    --bg-page: #FAF8F5;
+    --bg-page: #F8F5EF;
     --bg-surface: #FFFFFF;
-    --text-primary: #1F2937;
+    --text-primary: #20242B;
     --text-secondary: #4B5563;
     --text-muted: #6B7280;
-    --color-terracotta: #C25E34;
-    --color-terracotta-dark: #A0441E;
-    --color-terracotta-light: #FBF0EB;
-    --color-emerald-craft: #065F46;
-    --border-warm: #EBE5DA;
+    --color-terracotta: #B94D28;
+    --color-terracotta-dark: #9C3D1D;
+    --color-terracotta-light: #FAF0EA;
+    --color-brass: #D5A45D;
+    --color-sage: #54745C;
+    --color-emerald-craft: #54745C;
+    --border-warm: #EAE4D8;
   }
 
   html {

@@ -128,7 +128,7 @@ export const MakerProfilePage: React.FC = () => {
                   <img
                     src={maker.avatar_url}
                     alt={maker.business_name}
-                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl border-4 border-white object-cover bg-white shadow-md"
+                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl border-4 border-white object-cover object-top bg-white shadow-md"
                   />
                 ) : (
                   <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl border-4 border-white bg-[#FAF0EB] text-[#C25E34] font-bold text-3xl sm:text-4xl flex items-center justify-center shadow-md">

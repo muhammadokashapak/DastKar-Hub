@@ -128,6 +128,13 @@ class LogisticsService
                     'delivered_at' => now(),
                 ]);
 
+                // Increment seller completed orders count upon genuine delivery
+                foreach ($order->items as $orderItem) {
+                    if ($orderItem->seller) {
+                        $orderItem->seller->increment('completed_orders');
+                    }
+                }
+
                 // Auto-trigger seller pending payout calculation
                 app(PayoutService::class)->createPendingPayoutForOrder($order);
 

@@ -78,6 +78,7 @@ Route::prefix('v1')->group(function () {
             Route::post('/products', [SellerDashboardController::class, 'storeProduct']);
             Route::put('/products/{id}', [SellerDashboardController::class, 'updateProduct']);
             Route::delete('/products/{id}', [SellerDashboardController::class, 'deleteProduct']);
+            Route::post('/ai/generate-listing', [SellerDashboardController::class, 'generateAiListing'])->middleware('throttle:30,1');
             Route::get('/orders', [SellerDashboardController::class, 'orders']);
             Route::patch('/orders/{id}/status', [SellerDashboardController::class, 'updateOrderStatus']);
             Route::post('/orders/{id}/shipment', [SellerDashboardController::class, 'createShipment']);

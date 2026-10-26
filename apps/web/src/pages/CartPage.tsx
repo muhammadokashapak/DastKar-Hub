@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, ArrowRight, ArrowLeft, ShoppingBag, ShieldCheck, Truck, Heart } from 'lucide-react';
 import { useCart } from '../lib/cartContext';
 import { useWishlist } from '../lib/wishlistContext';
+import { getProductImage, handleImageError } from '../lib/craftImages';
 
 export const CartPage: React.FC = () => {
   const { items, updateQuantity, removeFromCart, totalItems, subtotal } = useCart();
@@ -53,7 +54,7 @@ export const CartPage: React.FC = () => {
         {/* Cart Items List */}
         <div className="lg:col-span-8 bg-white rounded-2xl border border-[#EBE5DA] divide-y divide-gray-100 overflow-hidden shadow-2xs">
           {items.map((item, idx) => {
-            const img = item.product.primary_image?.image_url || item.product.images?.[0]?.image_url || '';
+            const img = getProductImage(item.product);
             const isWish = isInWishlist(item.product.id);
             return (
               <div key={idx} className="p-3.5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
@@ -62,6 +63,7 @@ export const CartPage: React.FC = () => {
                     <img
                       src={img}
                       alt={item.product.title}
+                      onError={(e) => handleImageError(e, item.product.title)}
                       className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl object-cover bg-gray-50 border border-gray-100 shrink-0 hover:opacity-90 transition-opacity"
                     />
                   </Link>

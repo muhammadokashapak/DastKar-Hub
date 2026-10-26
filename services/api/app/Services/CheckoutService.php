@@ -136,10 +136,12 @@ class CheckoutService
 
             $orderNumber = 'DKH-' . date('Y') . '-' . strtoupper(substr(uniqid(), -6));
 
+            $isCod = ($data['payment_method'] ?? 'cod') === 'cod';
+
             $order = Order::create([
                 'order_number' => $orderNumber,
                 'buyer_id' => $buyer->id,
-                'status' => 'confirmed',
+                'status' => $isCod ? 'confirmed' : 'pending_payment',
                 'subtotal' => $quote['subtotal'],
                 'shipping_fee' => $quote['shipping_fee'],
                 'discount_amount' => $quote['discount_amount'],
@@ -148,7 +150,7 @@ class CheckoutService
                 'shipping_address_snapshot' => $addressSnapshot,
                 'shipping_method' => $data['shipping_method'] ?? 'standard',
                 'payment_method' => $data['payment_method'] ?? 'cod',
-                'payment_status' => ($data['payment_method'] ?? 'cod') === 'cod' ? 'pending' : 'paid',
+                'payment_status' => 'pending',
                 'notes' => $data['notes'] ?? null,
                 'placed_at' => now(),
             ]);
@@ -158,15 +160,26 @@ class CheckoutService
                 $variant = $item['variant'];
                 $qty = $item['quantity'];
 
-                // Deduct stock atomically
+                // Atomic stock lock & validation to prevent race-condition overselling
                 if ($variant) {
-                    $variant->decrement('stock_quantity', $qty);
+                    $lockedVariant = ProductVariant::where('id', $variant->id)->lockForUpdate()->first();
+                    if (!$lockedVariant || $lockedVariant->stock_quantity < $qty) {
+                        throw ValidationException::withMessages([
+                            'items' => ["Requested quantity for variant '{$variant->name}' is no longer available."],
+                        ]);
+                    }
+                    $lockedVariant->decrement('stock_quantity', $qty);
                 } else {
-                    $product->decrement('stock_quantity', $qty);
+                    $lockedProduct = Product::where('id', $product->id)->lockForUpdate()->first();
+                    if (!$lockedProduct || $lockedProduct->stock_quantity < $qty) {
+                        throw ValidationException::withMessages([
+                            'items' => ["Requested quantity for '{$product->title}' is no longer available."],
+                        ]);
+                    }
+                    $lockedProduct->decrement('stock_quantity', $qty);
                 }
 
-                // Increment seller metrics
-                $product->seller->increment('completed_orders');
+                // Increment seller GMV
                 $product->seller->increment('total_sales', $item['subtotal']);
 
                 // Create immutable order item snapshot per A22
@@ -198,10 +211,10 @@ class CheckoutService
                 'order_id' => $order->id,
                 'provider' => $data['payment_method'] ?? 'cod',
                 'provider_reference' => 'PAY-' . strtoupper(substr(md5(uniqid()), 0, 10)),
-                'status' => ($data['payment_method'] ?? 'cod') === 'cod' ? 'pending' : 'paid',
+                'status' => 'pending',
                 'amount' => $quote['total_amount'],
                 'currency' => 'PKR',
-                'paid_at' => ($data['payment_method'] ?? 'cod') !== 'cod' ? now() : null,
+                'paid_at' => null,
             ]);
 
             return $order->load(['items.seller', 'payments']);

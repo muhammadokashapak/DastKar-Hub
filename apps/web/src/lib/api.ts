@@ -249,6 +249,13 @@ class ApiClient {
     });
   }
 
+  async generateAiListing(payload: { notes: string; category_id?: number }): Promise<{ data: any; message: string }> {
+    return this.request('/seller/ai/generate-listing', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+  }
+
   async getSellerOrders(status?: string): Promise<{ data: any[]; meta: any }> {
     const qs = status ? `?status=${status}` : '';
     return this.request(`/seller/orders${qs}`);

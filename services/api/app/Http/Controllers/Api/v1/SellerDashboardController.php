@@ -259,5 +259,26 @@ class SellerDashboardController extends Controller
             'message' => "Shipment successfully booked with {$validated['courier']}. Consignment Tracking: {$shipment->tracking_number}",
         ], 201);
     }
+
+    /**
+     * AI-Assisted Listing Draft Synthesis (Phase 4 AI Roadmap)
+     */
+    public function generateAiListing(Request $request): JsonResponse
+    {
+        $this->getSeller($request);
+
+        $validated = $request->validate([
+            'notes' => 'required|string|min:3|max:500',
+            'category_id' => 'nullable|exists:categories,id',
+        ]);
+
+        $aiService = app(\App\Services\AiListingService::class);
+        $draft = $aiService->generateListing($validated['notes'], $validated['category_id'] ?? null);
+
+        return response()->json([
+            'data' => $draft,
+            'message' => 'AI listing draft synthesized successfully. Review and approve before publishing.',
+        ]);
+    }
 }
 

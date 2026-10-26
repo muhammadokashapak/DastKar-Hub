@@ -33,9 +33,18 @@ class DisputeService
             throw ValidationException::withMessages(['order' => 'Disputes can only be raised for confirmed, shipped or delivered orders.']);
         }
 
-        // Get primary seller for the order
-        $firstItem = $order->items()->first();
-        $sellerId = $firstItem?->product?->seller_id ?? 1;
+        // Attribute dispute to specific order item's artisan seller if specified
+        $sellerId = null;
+        if (!empty($data['order_item_id'])) {
+            $item = $order->items()->where('id', $data['order_item_id'])->first();
+            if ($item) {
+                $sellerId = $item->seller_id ?? $item->product?->seller_id;
+            }
+        }
+        if (!$sellerId) {
+            $firstItem = $order->items()->first();
+            $sellerId = $firstItem?->seller_id ?? $firstItem?->product?->seller_id ?? 1;
+        }
 
         return DB::transaction(function () use ($buyer, $order, $sellerId, $data) {
             $dispute = Dispute::create([

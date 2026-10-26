@@ -60,8 +60,47 @@ export const SellerDashboardPage: React.FC = () => {
     image_url: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80',
   });
 
+  // AI Listing Assistant State (Phase 4 AI Roadmap)
+  const [aiNotes, setAiNotes] = useState('');
+  const [generatingAi, setGeneratingAi] = useState(false);
+  const [showAiAssistant, setShowAiAssistant] = useState(false);
+
   const [savingProduct, setSavingProduct] = useState(false);
   const [message, setMessage] = useState('');
+
+  const handleGenerateAi = async () => {
+    if (!aiNotes.trim()) {
+      setToast({ message: 'Please provide quick craft notes or keywords (e.g. Multani blue pottery vase, Ajrak shawl)', type: 'error' });
+      return;
+    }
+    setGeneratingAi(true);
+    try {
+      const res = await api.generateAiListing({
+        notes: aiNotes.trim(),
+        category_id: newProduct.category_id,
+      });
+      const draft = res.data;
+      if (draft) {
+        setNewProduct(prev => ({
+          ...prev,
+          title: draft.title || prev.title,
+          description: draft.description || prev.description,
+          materials: draft.materials || prev.materials,
+          dimensions: draft.dimensions || prev.dimensions,
+          care_instructions: draft.care_instructions || prev.care_instructions,
+          base_price: draft.suggested_price || prev.base_price,
+        }));
+        setToast({
+          message: '✨ AI draft created! Please review and adjust before publishing.',
+          type: 'success',
+        });
+      }
+    } catch (err: any) {
+      setToast({ message: err.message || 'Failed to generate AI listing draft', type: 'error' });
+    } finally {
+      setGeneratingAi(false);
+    }
+  };
 
   const loadData = () => {
     setLoading(true);
@@ -639,6 +678,63 @@ export const SellerDashboardPage: React.FC = () => {
             <h3 className="font-serif text-lg font-bold text-gray-900">
               Publish New Handcrafted Piece
             </h3>
+
+            {/* AI Listing Assistant (Phase 4 AI Roadmap) */}
+            <div className="p-3 bg-gradient-to-r from-amber-50 to-orange-50/70 border border-amber-200/90 rounded-xl space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-1.5 text-xs font-bold text-[#C25E34]">
+                  <Sparkles className="w-4 h-4" />
+                  <span>AI Craft Listing Assistant</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowAiAssistant(!showAiAssistant)}
+                  className="text-[11px] font-semibold text-[#C25E34] hover:underline cursor-pointer"
+                >
+                  {showAiAssistant ? 'Hide Assistant' : '✨ Generate with AI'}
+                </button>
+              </div>
+              {showAiAssistant && (
+                <div className="space-y-2 pt-1 text-xs">
+                  <p className="text-[11px] text-gray-600">
+                    Enter brief craft keywords or maker techniques (e.g. <em>"Multan cobalt blue ceramic urn floral motifs"</em> or <em>"Swati pashmina wool shawl"</em>):
+                  </p>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={aiNotes}
+                      onChange={(e) => setAiNotes(e.target.value)}
+                      placeholder="e.g. Hala indigo ajrak hand blocked with acacia wood stamps"
+                      className="flex-1 p-2 bg-white border border-amber-200 rounded-lg text-xs"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                          handleGenerateAi();
+                        }
+                      }}
+                    />
+                    <button
+                      type="button"
+                      disabled={generatingAi}
+                      onClick={handleGenerateAi}
+                      className="px-3 py-2 bg-[#C25E34] text-white font-semibold rounded-lg hover:bg-[#A0441E] transition-colors shrink-0 disabled:opacity-50 flex items-center space-x-1 text-xs cursor-pointer shadow-2xs"
+                    >
+                      {generatingAi ? (
+                        <span>Synthesizing...</span>
+                      ) : (
+                        <>
+                          <Sparkles className="w-3.5 h-3.5" />
+                          <span>Draft</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  <p className="text-[10px] text-gray-500 italic">
+                    * Automatically synthesizes authentic title, cultural story, materials, and care guide. Human approval required before publishing.
+                  </p>
+                </div>
+              )}
+            </div>
 
             <form onSubmit={handleCreateProduct} className="space-y-3 text-xs">
               <div>

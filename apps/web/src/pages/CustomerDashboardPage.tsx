@@ -6,6 +6,7 @@ import { useCart } from '../lib/cartContext';
 import { useWishlist } from '../lib/wishlistContext';
 import { api } from '../lib/api';
 import { Order, Product } from '../types';
+import { getProductImage, handleImageError, getFallbackForTitle } from '../lib/craftImages';
 
 export const CustomerDashboardPage: React.FC = () => {
   const { user } = useAuth();
@@ -226,9 +227,12 @@ export const CustomerDashboardPage: React.FC = () => {
                     {ord.items?.map((item) => (
                       <div key={item.id} className="flex items-center justify-between text-xs bg-[#FAF8F5] p-2.5 rounded-xl border border-[#EBE5DA]">
                         <div className="flex items-center space-x-3">
-                          {item.product_image && (
-                            <img src={item.product_image} alt={item.product_title} className="w-10 h-10 rounded-lg object-cover" />
-                          )}
+                          <img
+                            src={item.product_image || getFallbackForTitle(item.product_title)}
+                            alt={item.product_title}
+                            onError={(e) => handleImageError(e, item.product_title)}
+                            className="w-10 h-10 rounded-lg object-cover"
+                          />
                           <div>
                             <p className="font-semibold text-gray-900">{item.product_title}</p>
                             <p className="text-[11px] text-gray-500">Maker: {item.seller?.business_name || 'Artisan'}</p>
@@ -293,7 +297,7 @@ export const CustomerDashboardPage: React.FC = () => {
           {wishlist.length > 0 ? (
             <div className="divide-y divide-gray-100">
               {wishlist.map((craft) => {
-                const img = craft.primary_image?.image_url || craft.images?.[0]?.image_url || 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=600&q=80';
+                const img = getProductImage(craft);
                 const isOutOfStock = craft.stock_quantity !== undefined && craft.stock_quantity <= 0;
 
                 return (
@@ -303,6 +307,7 @@ export const CustomerDashboardPage: React.FC = () => {
                         <img
                           src={img}
                           alt={craft.title}
+                          onError={(e) => handleImageError(e, craft.title)}
                           className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-[#EBE5DA] hover:opacity-90 transition-opacity"
                         />
                       </Link>

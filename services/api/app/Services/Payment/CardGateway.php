@@ -47,10 +47,18 @@ class CardGateway implements PaymentGatewayInterface
 
     public function parseWebhook(array $payload, string $signature = ''): array
     {
+        $secret = config('services.card.webhook_secret', 'card_secret_dastkar_2026');
+        $orderNumber = $payload['order_number'] ?? '';
+        $providerRef = $payload['provider_reference'] ?? '';
+        $calculated = hash_hmac('sha256', "{$orderNumber}&{$providerRef}", $secret);
+
+        $isTestMode = ($payload['test_mode'] ?? false) && app()->environment('local', 'testing');
+        $isValid = $isTestMode || (!empty($signature) && hash_equals($calculated, $signature));
+
         return [
-            'valid' => true,
-            'order_reference' => $payload['order_number'] ?? null,
-            'provider_reference' => $payload['provider_reference'] ?? null,
+            'valid' => $isValid,
+            'order_reference' => $orderNumber ?: null,
+            'provider_reference' => $providerRef ?: null,
             'is_paid' => ($payload['status'] ?? '') === 'paid',
             'status' => $payload['status'] ?? 'pending',
         ];

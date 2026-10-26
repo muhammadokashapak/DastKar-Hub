@@ -6,52 +6,52 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#1C2028] text-gray-300 text-sm mt-auto border-t border-gray-800">
       {/* Artisan Value Bar */}
-      <div className="border-b border-gray-800 py-10 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-amber-950/60 border border-amber-800/40 text-amber-400 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+      <div className="border-b border-gray-800 py-6 sm:py-10 px-3.5 sm:px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+          <div className="flex flex-col sm:flex-row items-start sm:space-x-3.5 space-y-1.5 sm:space-y-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber-950/60 border border-amber-800/40 text-amber-400 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-base">Direct From Authentic Makers</h4>
-              <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                Every piece is created by verified Pakistani artisans, preserving centuries-old generational craft.
+              <h4 className="font-semibold text-white text-xs sm:text-base">Authentic Makers</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1 leading-relaxed">
+                Created by verified Pakistani artisans preserving generational craft.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 flex items-center justify-center shrink-0">
-              <MapPin className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row items-start sm:space-x-3.5 space-y-1.5 sm:space-y-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 flex items-center justify-center shrink-0">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-base">Regional Craft Heritage</h4>
-              <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                From Multani Kashigari and Chinioti Sheesham to Sindhi Ajrak and Swat gemstone silver.
+              <h4 className="font-semibold text-white text-xs sm:text-base">Regional Heritage</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1 leading-relaxed">
+                Multani Kashigari, Chinioti Rosewood, Sindhi Ajrak &amp; Swat Pashmina.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-sky-950/60 border border-sky-800/40 text-sky-400 flex items-center justify-center shrink-0">
-              <Truck className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row items-start sm:space-x-3.5 space-y-1.5 sm:space-y-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-sky-950/60 border border-sky-800/40 text-sky-400 flex items-center justify-center shrink-0">
+              <Truck className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-base">Reliable Safe Delivery</h4>
-              <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                Specialized craft packaging with nationwide courier tracking and Cash on Delivery support.
+              <h4 className="font-semibold text-white text-xs sm:text-base">Safe Delivery</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1 leading-relaxed">
+                Specialized craft packaging with courier tracking and Cash on Delivery.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-rose-950/60 border border-rose-800/40 text-rose-400 flex items-center justify-center shrink-0">
-              <Heart className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row items-start sm:space-x-3.5 space-y-1.5 sm:space-y-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-rose-950/60 border border-rose-800/40 text-rose-400 flex items-center justify-center shrink-0">
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-base">Maker-First Economics</h4>
-              <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                Over 90% of item price goes straight to the independent maker, empowering rural livelihood.
+              <h4 className="font-semibold text-white text-xs sm:text-base">Maker Economics</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1 leading-relaxed">
+                Over 85% goes straight to the independent maker families.
               </p>
             </div>
           </div>
@@ -59,8 +59,8 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
-        <div className="sm:col-span-2">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
+        <div className="col-span-2 sm:col-span-2">
           <Link to="/" className="flex items-center space-x-2.5 mb-4 group">
             <div className="w-8 h-8 rounded-lg bg-[#C25E34] text-white flex items-center justify-center group-hover:bg-[#A0441E] transition-colors">
               <Layers className="w-4 h-4 text-amber-200" />

@@ -37,80 +37,100 @@ const PROVINCES = [
   'Federal',
 ];
 
-// Curated authentic Pakistani craft visual mapping for makers
+// Curated authentic Pakistani craft visual mapping for makers (matched to database slugs)
 const CRAFT_THEME_DATA: Record<string, { cover: string; avatar: string; discipline: string; tags: string[] }> = {
-  'hunar-e-resin': {
-    cover: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+  'hunar-e-resin-custom': {
+    cover: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Resin & Calligraphy',
     tags: ['Epoxy Resin', 'Botanicals', 'Urdu Calligraphy'],
   },
   'peshawar-leather-lab': {
-    cover: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Leather Goods & Saddlery',
     tags: ['Vegetable Tanned', 'Saddle Stitch', 'Full Grain'],
   },
-  'mitti-clay-contemporary-pottery': {
-    cover: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
+  'mitti-clay-contemporary': {
+    cover: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Ceramics & Stoneware',
     tags: ['Handthrown', 'Woodfired', 'Stoneware'],
   },
   'rang-e-hunar-studio': {
-    cover: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Folk Art & Truck Art',
     tags: ['Highway Poetry', 'Enamel Paint', 'Folk Pop'],
   },
   'swat-handloom-wool-weaves': {
-    cover: 'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Textiles & Handloom',
     tags: ['Swati Wool', 'Pit Loom', 'Organic Fleece'],
   },
-  'dastkari-studio-balochi-crafts': {
-    cover: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80',
+  'dastkari-studio-balochi': {
+    cover: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Balochi Tribal Crafts',
     tags: ['Mirrorwork', 'Do-Toch Needlework', 'Heritage'],
   },
+  'hunar-e-wood-chiniot': {
+    cover: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
+    discipline: 'Chinioti & Sheesham Wood',
+    tags: ['Solid Rosewood', 'Geometric Inlay', 'Hand Carved'],
+  },
+  'khushboo-crafts-candle': {
+    cover: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
+    discipline: 'Botanical Candles & Aromatics',
+    tags: ['Soy Wax', 'Pure Essential Oils', 'Hand Poured'],
+  },
   'mitti-studio-ceramic-decor': {
-    cover: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Multani Blue Pottery',
     tags: ['Multani Kashikari', 'Cobalt Glaze', 'Incense Vessels'],
   },
   'hala-artisan-clay-potters': {
-    cover: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Sindhi Glazed Terracotta',
     tags: ['Hala Glaze', 'Floral Terra', 'Lead-Free Clay'],
   },
   'woven-dreams-macrame': {
-    cover: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Macramé & Fiber Art',
     tags: ['Cotton Cord', 'Boho Knotting', 'Wall Tapestry'],
   },
   'peshawar-craft-house-brass': {
-    cover: 'https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Khyber Brass & Metalwork',
     tags: ['Openwork Filigree', 'Cast Brass', 'Dhoop Daani'],
   },
   'kashmir-threads-pashmina': {
-    cover: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Pashmina & Fine Weaves',
     tags: ['Mountain Cashmere', 'Zari Border', 'Featherlight'],
   },
   'lahore-handmade-studio': {
-    cover: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+    cover: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&crop=faces&w=400&h=400&q=80',
     discipline: 'Chinioti & Sheesham Wood',
     tags: ['Solid Rosewood', 'Geometric Inlay', 'Hand Carved'],
   },
+};
+
+const getCraftTheme = (slug: string) => {
+  if (CRAFT_THEME_DATA[slug]) return CRAFT_THEME_DATA[slug];
+  for (const [key, val] of Object.entries(CRAFT_THEME_DATA)) {
+    if (slug.startsWith(key) || key.startsWith(slug)) return val;
+  }
+  return null;
 };
 
 export const MakersDirectoryPage: React.FC = () => {
@@ -331,14 +351,14 @@ export const MakersDirectoryPage: React.FC = () => {
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-pulse">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="h-80 bg-gray-200 rounded-3xl" />
+            <div key={i} className="h-96 bg-gray-200 rounded-3xl" />
           ))}
         </div>
       ) : filteredMakers.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredMakers.map((maker) => {
-            const theme = CRAFT_THEME_DATA[maker.slug];
-            const coverImage = theme?.cover || maker.cover_url || 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1000&q=80';
+            const theme = getCraftTheme(maker.slug);
+            const coverImage = theme?.cover || maker.cover_url || 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80';
             const avatarImage = theme?.avatar || maker.avatar_url;
             const craftDiscipline = theme?.discipline || maker.craft_description || 'Authentic Craft';
             const tags = theme?.tags || ['Handmade', 'Generational Craft'];
@@ -350,14 +370,15 @@ export const MakersDirectoryPage: React.FC = () => {
                 to={`/makers/${maker.slug}`}
                 className="group bg-white rounded-3xl border border-[#EBE5DA] overflow-hidden hover:border-[#C25E34] hover:shadow-xl transition-all duration-300 flex flex-col"
               >
-                {/* Visual Cover Banner with Zoom */}
-                <div className="h-44 bg-[#F0EAE1] relative overflow-hidden">
+                {/* Visual Cover Banner with Zoom & Generous Height */}
+                <div className="h-48 sm:h-52 bg-[#F0EAE1] relative overflow-hidden">
                   <img
                     src={coverImage}
                     alt={maker.business_name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
 
                   {/* Top Status Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
@@ -387,20 +408,23 @@ export const MakersDirectoryPage: React.FC = () => {
                 {/* Card Body */}
                 <div className="p-5 sm:p-6 flex-1 flex flex-col">
                   {/* Avatar & Title Row */}
-                  <div className="flex items-start space-x-3.5 -mt-12 mb-3">
-                    {avatarImage ? (
-                      <img
-                        src={avatarImage}
-                        alt={maker.business_name}
-                        className="w-16 h-16 rounded-2xl border-4 border-white object-cover bg-white shadow-md shrink-0 group-hover:scale-105 transition-transform"
-                      />
-                    ) : (
-                      <div className="w-16 h-16 rounded-2xl border-4 border-white bg-[#FAF0EB] text-[#C25E34] font-serif font-bold text-2xl flex items-center justify-center shadow-md shrink-0">
-                        {maker.business_name.charAt(0).toUpperCase()}
-                      </div>
-                    )}
+                  <div className="flex items-start space-x-3.5 -mt-10 sm:-mt-11 mb-3">
+                    <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-2xl border-4 border-white bg-white shadow-lg shrink-0 overflow-hidden group-hover:scale-105 transition-transform">
+                      {avatarImage ? (
+                        <img
+                          src={avatarImage}
+                          alt={maker.business_name}
+                          className="w-full h-full object-cover object-top"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-[#FAF0EB] text-[#C25E34] font-serif font-bold text-2xl flex items-center justify-center">
+                          {maker.business_name.charAt(0).toUpperCase()}
+                        </div>
+                      )}
+                    </div>
 
-                    <div className="pt-6 flex-1 min-w-0">
+                    <div className="pt-3 sm:pt-4 flex-1 min-w-0">
                       <h3 className="font-serif font-bold text-base text-gray-900 group-hover:text-[#C25E34] transition-colors leading-snug truncate">
                         {maker.business_name}
                       </h3>

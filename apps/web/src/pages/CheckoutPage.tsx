@@ -15,6 +15,7 @@ import { useCart } from '../lib/cartContext';
 import { useAuth } from '../lib/authContext';
 import { api } from '../lib/api';
 import { Order } from '../types';
+import { getProductImage, handleImageError } from '../lib/craftImages';
 
 const PAKISTAN_CITIES = [
   'Karachi',
@@ -560,8 +561,9 @@ export const CheckoutPage: React.FC = () => {
             {items.map((item, idx) => (
               <div key={idx} className="py-2.5 flex items-center space-x-3 text-xs">
                 <img
-                  src={item.product.primary_image?.image_url || item.product.images?.[0]?.image_url || ''}
+                  src={getProductImage(item.product)}
                   alt={item.product.title}
+                  onError={(e) => handleImageError(e, item.product.title)}
                   className="w-12 h-12 rounded-lg object-cover bg-gray-50 border border-gray-100 shrink-0"
                 />
                 <div className="flex-1 truncate">
