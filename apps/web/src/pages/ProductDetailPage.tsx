@@ -62,6 +62,21 @@ export const ProductDetailPage: React.FC = () => {
       });
   }, [slug]);
 
+  const allImages = useMemo(() => {
+    if (!product) return [];
+    const raw = product.images && product.images.length > 0
+      ? product.images.map(img => img.image_url)
+      : [product.primary_image?.image_url || getProductImage(product)];
+    const filtered = raw.filter(
+      (u): u is string =>
+        Boolean(u) &&
+        !u.includes('1590483256037') &&
+        !u.includes('1611591475152') &&
+        !u.includes('1576020799627')
+    );
+    return filtered.length > 0 ? filtered : [getProductImage(product)];
+  }, [product]);
+
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -99,20 +114,6 @@ export const ProductDetailPage: React.FC = () => {
     addToCart(product, quantity, selectedVariant, customizationValues);
     navigate('/checkout');
   };
-
-  const allImages = useMemo(() => {
-    const raw = product.images && product.images.length > 0
-      ? product.images.map(img => img.image_url)
-      : [product.primary_image?.image_url || getProductImage(product)];
-    const filtered = raw.filter(
-      (u): u is string =>
-        Boolean(u) &&
-        !u.includes('1590483256037') &&
-        !u.includes('1611591475152') &&
-        !u.includes('1576020799627')
-    );
-    return filtered.length > 0 ? filtered : [getProductImage(product)];
-  }, [product]);
 
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 pb-32 md:pb-10 space-y-6 sm:space-y-10">
