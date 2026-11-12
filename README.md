@@ -77,6 +77,16 @@ The platform comes pre-seeded with a comprehensive, realistic catalog of **325 h
       Fluid responsive design with sticky mobile purchase bars, bottom navigation, faceted filter drawers, and automatic scroll-to-top on route changes.
     </td>
   </tr>
+  <tr>
+    <td width="50%">
+      <h4>🎙️ AI Artisan Workshop Liaison</h4>
+      Voice-enabled conversational assistant with Roman Urdu understanding, live catalog matching, in-chat product cards, and instant cart additions.
+    </td>
+    <td width="50%">
+      <h4>🔊 Voice Accessibility & Escrow Tracking</h4>
+      Integrated speech-to-text, audio read-aloud storytelling, instant order milestone tracking, and double-entry bank escrow verification.
+    </td>
+  </tr>
 </table>
 
 ### 🔨 For Artisans & Masters (Maker Command Center)
